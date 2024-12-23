@@ -1,27 +1,32 @@
 const PasswordBox = document.getElementById("final-password");
 
-const UpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const LowerCase = "abcdefghijklmnopqrstuvwxyz";
-const Numbers = "1234567890";
-const Symbols = "!#$%&/()="
-
-const AllCharacters = UpperCase + LowerCase + Numbers + Symbols;
+const CharacterSets = [
+    {id: "UpperCase", label: "UpperCaseLetters", characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
+    {id: "LowerCase", label: "LowerCaseLetters", characters: "abcdefghijklmnopqrstuvwxyz"},
+    {id: "Numbers", label: "Numbers", characters: "1234567890"},
+    {id: "Symbols", label: "Symbols", characters: "!#$%&/()="},
+]
 
 function RangeAlert() {
-    const PasswordRange = Number(document.getElementById("passwordlengthtext").value);
-    if (PasswordRange >= 4 && PasswordRange <= 30) {
-        let password = "";
-        password += UpperCase[Math.floor(Math.random() * UpperCase.length)];
-        password += LowerCase[Math.floor(Math.random() * LowerCase.length)];
-        password += Numbers[Math.floor(Math.random() * Numbers.length)];
-        password += Symbols[Math.floor(Math.random() * Symbols.length)];
+    const PasswordLength = Number(document.getElementById("passwordlengthtext").value);
+    if (isNaN(PasswordLength) || PasswordLength < 4 || PasswordLength > 30) {
+        alert("Password length must be between 4 and 30 characters.");
+        return;
+    }
 
-        while (PasswordRange > password.length) {
-            password += AllCharacters[Math.floor(Math.random() * AllCharacters.length)];
-        }
-        PasswordBox.value = password;
+    const CheckedSets = CharacterSets.filter(set => document.getElementById(set.id.toLowerCase()).checked);
+    if (CheckedSets.length === 0) {
+        alert("Please select at least one checkbox.");
+        return;
     }
-    else {
-        alert("Input numbers must be between 4 and 30")
+
+    let password = "";
+    password += CheckedSets[Math.floor(Math.random() * CheckedSets.length)].characters[Math.floor(Math.random() * CheckedSets[0].characters.length)];
+
+    while (password.length < PasswordLength) {
+        const RandomCharacters = CheckedSets[Math.floor(Math.random() * CheckedSets.length)];
+        password += RandomCharacters.characters[Math.floor(Math.random() * RandomCharacters.characters.length)];
     }
+
+    PasswordBox.value = password;
 }
