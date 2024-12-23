@@ -1,0 +1,125 @@
+body{
+    background: linear-gradient(to right, #52796F, #354f52 98%);
+    font-family: "Open Sans";
+    color: #cad2c5
+}
+
+h1 {
+    text-align: center;
+    line-height: 10px;
+}
+
+p {
+    text-align: center;
+}
+
+.passfill {
+    width: 60%;
+    background-color: #2f3e46;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 800px;
+    min-width: 400px;
+    }
+
+.Password-Result-Title {
+    margin-bottom:5px;
+}
+
+.Password-Result-Click {
+    background: #394C56;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: 500;
+    height: 100%;
+    line-height: 75px;
+    text-align: center;
+    width: 100%;
+}
+
+#final-password {
+    WIDTH: 90%;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+
+}
+
+.Password-Length {
+    align-items: center;
+    border-radius: 8px;
+    height: 30px;
+    justify-content: center;
+    padding-top: 10px;
+    width: 100%;
+}
+
+#passwordlengthtext {
+    background: #2f3e46;
+    border-radius: 5px;
+    border: none;
+    color: #2f3e46;
+    background-color: #cad2c5;
+    width: 98%;
+}
+
+.slider {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    margin-top: -7.5px;
+    height: 20px;
+    width: 20px;
+    background: #cad2c5;
+    border-radius: 50%;
+}
+
+.slider::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #84A98C, #52796F 98%);
+    height: 5px;
+    align-content: center;
+}
+
+.Password-Settings {
+    margin-top: 20px;
+}
+.Password-Settings-Toggle {
+    align-items: center;
+    background: #394C56;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 40px;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+}
+
+.Password-Button-Container-Button {
+    background: linear-gradient(to right, #84A98C, #52796F 98%);
+    border: none;
+    border-radius: 8px;
+    color: #cad2c5;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    height: 60px;
+    letter-spacing: 3px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    transition: all .15s ease;
+    width: 100%;
+}
